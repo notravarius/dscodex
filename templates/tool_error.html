@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+        <link rel="stylesheet" type="text/css" href="../static/css/style.css"/>
+        <link rel="icon" type="image/png" href="../static/images/favicon.PNG"/>
+        <title>DSCodex</title>
+    </head>
+    <body>
+
+        
+        {% extends "template.html" %}
+        {% block content %}
+        
+        <br><br>
+
+        <h5>Here is a preview of your original csv file</h5>
+        
+        <div class="container-fluid">
+
+
+            <div class="row">
+                <div class="card">
+                    <div class="card-content">
+                        <pre class="brush: python">{{ df_preview }}
+                        </pre>    
+                    </div>
+
+                </div>
+    
+            </div>
+            
+
+            <!-----------------Input request---------------------->
+            
+            <h5>Insert your request here. Then, hit Run!</h5>
+           
+
+            <div class="row">
+                    <div class="card">
+                        <div class="card-action">
+                            <form method="POST">
+                                
+                                <input name="text" placeholder="Type your request here" style="display: inline;">
+                                <button class="btn" type="submit">Run</button>
+                            </form>
+                        </div>
+                    </div>
+        
+            </div>
+
+            <p style="color: red">Hey! Your request is not correct. Try it again!</p>
+
+            <!-----------------Output------------------------------>
+
+            <h5>Here is the output for your request</h5>
+            <div class="row">
+                <div class="card">
+                    <div class="card-content">
+                        <pre class="brush: python">{{ output }}
+                        </pre>    
+                    </div>
+
+                </div>
+    
+            </div>
+
+        <!-----------------Datafrane first rows----------------------->
+             <h5>Here is how your dataframe looks now. Hit 'SAVE AS CSV' if you want to save it on your local computer</h5>
+            <div class="row">
+                    <div class="card">
+                        <div class="card-content">
+                            <pre class="brush: python">{{ dataframe }}
+                            </pre>    
+                        </div>
+    
+            
+                        
+                        <div class="card-action">
+                            <form method="POST" action="/save_as_csv/">
+                                <button class="btn" type="submit">SAVE AS CSV</button>
+                            </form>
+                        </div>
+                    </div>
+        
+            </div>
+        
+
+       
+        <!-----------------Generated code------------------------------>
+        <h5>Here is the code used to run your request. Hit 'COPY CODE' if you want to use it on your own script</h5>
+        <div class="row">
+            <div class="card">
+                <div class="card-content" id="content">
+                    <pre class="brush: python">{{ code }}
+                    </pre>    
+                </div>
+
+                <div class="card-action">
+                    <button class="btn" data-clipboard-target="#content">Copy code</button>
+                </div>
+
+            </div>
+
+    </div>
+
+        
+        </div>
+
+        </div>
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.8/clipboard.min.js"></script>
+        <script>
+            var clipboard = new ClipboardJS(".btn");
+
+            clipboard.on("success", function(){
+                M.toast({
+                    html:"copied successfully",
+                    classes:"green"
+                })
+            });
+
+            clipboard.on("error", function(){
+            M.toast({
+                html:"copy action failed",
+                classes:"red"
+                })
+            });
+
+        </script>
+
+      
+
+        {% endblock %}
+
+    </body>
+</html>
+
+
+                            

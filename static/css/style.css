@@ -1,0 +1,94 @@
+html {
+    position: relative;
+    min-height: 100%;
+    
+  }
+body {
+  font-family: NBInter,monospace;
+  background-color: white;
+  color: black;
+  background: rgb(90,191,149);
+  background: linear-gradient(90deg, rgba(90,191,149,1) 0%, rgba(255,255,255,1) 20%, rgba(255,255,255,1) 50%, rgba(255,255,255,1) 80%, rgba(90,191,149,1) 100%);
+    
+}
+
+#iconame {
+  text-shadow: 0.5px 0.5px 0.5px green,1px 1px 0.5px green;font-size: 35px;
+}
+
+#title {
+  text-align: center; text-shadow: 1px 1px 1px green,2px 2px 1px green; font-weight: 600;
+}
+
+#subtitles{
+  text-align: center; text-shadow: 1px 1px 1px green,2px 2px 1px green;
+ 
+}
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 60px;
+  background: rgb(90,191,149);
+  background: linear-gradient(90deg, rgba(90,191,149,1) 0%, rgba(255,255,255,1) 20%, rgba(255,255,255,1) 50%, rgba(255,255,255,1) 80%, rgba(90,191,149,1) 100%);
+}
+
+
+#myheader {
+  color: black;
+  background: rgb(90,191,149);
+  background: linear-gradient(90deg, rgba(90,191,149,1) 0%, rgba(255,255,255,1) 20%, rgba(255,255,255,1) 50%, rgba(255,255,255,1) 80%, rgba(90,191,149,1) 100%);
+}
+
+.navbar-brand {
+  color:black;
+  font-size: 25px;
+  font-weight: 700;
+}
+
+h4 {
+  font-weight: 600;
+}
+
+
+input {
+  border: none;
+  background-color: transparent;
+  resize: none;
+  outline: none;
+  }
+
+pre {
+    overflow: auto;
+}
+
+ 
+body > .container {
+  padding: 15px 15px;
+}
+.container .text-muted {
+  margin: 20px 0;
+}
+
+.footer > .container {
+  padding-right: 15px;
+  padding-left: 15px;
+}
+  
+code {
+  font-size: 80%;
+}
+  
+.collapsible-header {
+  font-size: 16px;
+  font-weight: 550;
+}
+
+.collapsible-body {
+  font-size: 16px;
+}
+
+h5 {
+  font-family: 'georgia';
+  font-size: 25px;
+}

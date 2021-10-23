@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+ <head>
+   <meta charset="utf-8">
+   <title>dscodex</title>
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+   <link rel="stylesheet" type="text/css" href="../static/css/style.css"/>
+</head>
+ 
+<body>
+<!-- Fixed navbar -->
+  <nav class="navbar navbar-default navbar-fixed-top" id="myheader"> 
+      <div class="container">
+      <div class="navbar-header">
+      
+          <a class="navbar-brand" href="/" id="iconame">dscodex</a>
+
+  </nav>
+
+  <!-- Begin page content -->
+
+  <div class="container">
+    <h1 id="title">WELCOME TO DSCODEX!</h1>
+    <p style="text-align: center; max-width: 700px; margin-left: auto; margin-right: auto;"><i>An open source platform to manipulate dataframes and generate python scripts without writing any line of code. 
+      Based on Codex, a NLP deep learning model developed by OpenAI</i></p> <br>
+    <br>
+    <h4 id="subtitles">GET STARTED</h4> <br>
+  </div>
+
+
+        <!-- Begin page content -->
+  <div class="container">
+
+  {% block content %}
+  {% endblock %}
+  
+  <h4 id="subtitles">FAQ</h4> <br>
+    <ul class="collapsible" style="max-width: 800px; margin-left: auto; margin-right: auto;">
+      <li>
+        <div class="collapsible-header">
+          What is DSCodex?
+        </div>
+        <div class="collapsible-body"><p>It's an open source interactive application to manipulate dataframes, get insights from data, 
+          create models and whatever you want, without writing any line of code. Just write a request on plain-english and get it done!</p></div>
+      </li>
+      <li>
+        <div class="collapsible-header">
+          How it works?
+        </div>
+        <div class="collapsible-body"><p>When you type a request, that request works as input in a natural language processing model
+          that returns a python script. Then, the app executes that script and shows the output on the screen. That model was developed by
+          OpenAI and its name is Codex. Currently, it's on beta so to use it you will need to have your own private keys. Join the codex waitlist <a href="https://share.hsforms.com/1Lfc7WtPLRk2ppXhPjcYY-A4sk30" target="_blank">here</a>
+        </p></div>
+      </li>
+      <li>
+        <div class="collapsible-header">
+          How to use it?
+        </div>
+        <div class="collapsible-body"><p>First you will need to upload a dataset in <i>csv</i> format. Then, you will be able to type a request. As output, you
+          will get: a preview of the original dataset, output for your request, how the dataframe looks after running your request and the generated python script. You will
+          be able to copy the script and save your new dataset!
+        </p></div>
+      </li>
+      <li>
+        <div class="collapsible-header">
+          How can I contribute?
+        </div>
+        <div class="collapsible-body"><p>Go to .... and check the contribution guide and all issues to solve. Anyway, feel free to add new features and any recommendation is welcome!
+        </p></div>
+      </li>
+  </ul>  
+  <br><br><br><br><br>
+
+  <footer class="footer" id="contact">
+    <div class="container">
+      <p class="text-muted"><p class="copyright text-muted small">Developed by Leonel Bianchi - <a href="https://github.com/notravarius">Github</a>
+      </div>
+  </footer>
+
+  </div>
+
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+    var elems = document.querySelectorAll('.collapsible');
+    var instances = M.Collapsible.init(elems, {accordion: false});
+    });
+  </script>
+
+</body>
+
+</html>
+  

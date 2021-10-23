@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+        <link rel="stylesheet" type="text/css" href="../static/css/style.css"/>
+
+        <title>DSCodex</title>
+    </head>
+    <body>
+
+        {% extends "template.html" %}
+        {% block content %}
+        
+        
+
+        <div class="container">
+
+            <form method="POST" action="" enctype="multipart/form-data">
+                <p><input type="file" name="file"></p>
+                <p><input type="submit" value="Submit"></p>
+            </form>
+        
+            <form method="POST">
+                <input name="text" placeholder="Type your request here" style="display: inline;">
+                <input type="submit" value="Run" class="btn" style="display: inline;">
+            </form>
+
+            <br><br>
+
+            <div class="row">
+                    <div class="card">
+                        <div class="card-content" id="content">
+                            <pre class="brush: python">{{ resp }} 
+                            </pre>    
+                        </div>
+    
+                        <div class="card-action">
+                            <button class="btn" data-clipboard-target="#content">Copy code</button>
+                        </div>
+    
+                    </div>
+        
+            </div>
+        </div>
+
+        </div>
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.8/clipboard.min.js"></script>
+        <script>
+            var clipboard = new ClipboardJS(".btn");
+
+            clipboard.on("success", function(){
+                M.toast({
+                    html:"copied successfully",
+                    classes:"green"
+                })
+            });
+
+            clipboard.on("error", function(){
+            M.toast({
+                html:"copy action failed",
+                classes:"red"
+                })
+            });
+        </script>
+
+
+    
+          
+
+        {% endblock %}
+
+    </body>
+</html>
+
+
+                            

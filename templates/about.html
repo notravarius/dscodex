@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>About Flask</title>
+  </head>
+  <body>
+
+    {% extends "template.html" %}
+    {% block content %}
+
+    <h1> About Codex </h1>
+    <p> It's a deep learning model developed by OpenAI</p>
+    <p> There are a lot of developers building powerful AI applications on top of the API</p>
+
+    {% endblock %}
+  </body>
+</html>
+
+
+body{
+    background-color: black;
+    color: white;
+    font-family: NBInter,monospace;
+}
+
+.card {
+    color: black;
+}
+
+input {
+
+    background-color : #d1d1d1; 
+    color: white;
+  
+  }
+
+  <!DOCTYPE html>
+<html lang="en" dir="ltr">
+ <head>
+   <meta charset="utf-8">
+   <title>Flask Parent Template</title>
+   <link rel="stylesheet" type="text/css" href="../static/css/style.css"/>
+
+
+ </head>
+ <body>
+     <!-- As a heading -->
+    <nav class="navbar navbar-light bg-light">
+        <div class="container-fluid">
+        <span class="navbar-brand mb-0 h1">Navbar</span>
+        </div>
+    </nav>
+    <header>
+      <div class="container">
+        <h4 class="logo">dscodex</h4>
+        <span><i>Based on Codex API developed by OpenAI</i></span>
+        
+    </div>
+    </header>
+    
+    {% block content %}
+    {% endblock %}
+    
+ </body>
+</html>
+
+{% block content %}
+{% endblock %}
